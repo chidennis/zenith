@@ -1,0 +1,3 @@
+#!/bin/sh
+echo payment is due at the beginning of the month
+
