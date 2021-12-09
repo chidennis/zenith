@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: beast-core
+spec:
+  template:
+    spec:
+      imagePullSecrets:
+        - name: il4-gamewarden-pull-creds
+        - name: private-registry

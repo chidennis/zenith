@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: beast-core
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        "arbitrary": "change this to force re-deploy"
+    spec:
+      initContainers:
+        - name: data-loader
+          # Change image to AWS-CLI IB in the future
+          image: data-loader
+          command: ["sh", "/script/data-loader.sh"]
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: git-repo
+            - secretRef:
+                name: git-data-creds
+          env:
+            - name: CLEAR_VOLUME
+              value: "true"
+            - name: APP_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: app-name
+                  key: APP_NAME
+            - name: CLUSTER_PREFIX
+              valueFrom:
+                configMapKeyRef:
+                  name: cluster-prefix
+                  key: CLUSTER_PREFIX
+            - name: VOLUME_PATH
+              value: "/releases/beast-core/platforms"
+          volumeMounts:
+            - name: platforms
+              mountPath: /releases/beast-core/platforms
+            - name: data-loader
+              mountPath: /script
+      containers:
+        - name: beast-core
+          image: beast-core
+          env:
+            - name: PORT
+              value: "1337"
+            - name: WORKSPACE_PATH
+              value: /platforms/modules
+            - name: BEASTCODE_BEASTCORE_ENABLEAUTH
+              value: "false"
+            - name: BEASTCODE_BEASTCORE_AUTH_JWT_VALIDATEISSUER
+              value: "false"
+          envFrom:
+            - configMapRef:
+                name: beast-core-config
+          resources:
+            limits:
+              cpu: "1000m"
+              memory: "2Gi"
+            requests:
+              cpu: "125m"
+              memory: "512Mi"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 1337
+          volumeMounts:
+            - name: platforms
+              mountPath: /platforms
+      volumes:
+        - name: platforms
+          persistentVolumeClaim:
+            claimName: beast-core
+        - name: data-loader
+          configMap:
+            name: data-loader

@@ -1,0 +1,28 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  app: beast-core
+  authentication: istio-auth
+
+bases:
+  - https://code.gamewarden.io/common/app-common
+
+resources:
+  - deployment.yaml
+  - service.yaml
+  - pvc.yaml
+  - git-configmap.yaml
+  - virtualservice.yaml
+
+configMapGenerator:
+- name: beast-core-config
+  behavior: create
+  literals:
+    - VAR=value
+- name: data-loader
+  files:
+  - files/data-loader.sh
+- name: app-name
+  literals:
+    - APP_NAME=beast-core

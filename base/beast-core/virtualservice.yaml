@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: beast-core-vs
+  namespace: beast-core
+spec:
+  gateways:
+  - istio-system/public
+  hosts:
+  - beast-core.project-blue.gamewarden.io
+  http:
+  - route:
+    - destination:
+        host: beast-core
+        port:
+          number: 80

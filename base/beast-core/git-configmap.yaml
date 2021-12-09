@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: git-repo
+data:
+  GIT_REPO: "placeholder"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-prefix
+data:
+  CLUSTER_PREFIX: "placeholder"

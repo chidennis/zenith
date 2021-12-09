@@ -1,0 +1,14 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: beast-core
+  namespace: beast-core
+spec:
+  path: ./overlays/il2/dev
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: beast-core-manifest
+  prune: true
+  decryption:
+    provider: sops

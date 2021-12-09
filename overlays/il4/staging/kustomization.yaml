@@ -1,0 +1,22 @@
+resources:
+- ../base/
+- ../../../environments/il4/staging
+
+images:
+- name: beast-core
+  newName: registry.gamewarden.io/staging/beast-core-app
+  newTag: f964323d
+- name: data-loader
+  newName: registry.il2.dso.mil/platform-one/products/beast-code/beast-code-manifests/aws
+  newTag: "1.0"
+  
+patches:
+  - target:
+      kind: Kustomization
+    patch: |-
+      apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+      kind: Kustomization
+      metadata:
+        name: beast-core
+      spec:
+        path: ./overlays/il4/staging

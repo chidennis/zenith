@@ -1,0 +1,56 @@
+resources:
+  - ../../../base
+  - secrets
+  - flux-kustomization.yaml
+
+patches:
+  - target:
+      kind: Deployment
+    patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: beast-core
+      spec:
+        template:
+          spec:
+            imagePullSecrets:
+              - name: nexus-registry
+              - name: private-registry
+  - target:
+      kind: ConfigMap
+    patch: |-
+      apiVersion: v1
+      kind: ConfigMap
+      metadata:
+        name: git-repo
+      data:
+        GIT_REPO: code.gamewarden.io/agencies/project-blue/beast-core-application/beast-core-data.git
+  - target:
+      kind: VirtualService
+    patch: |-
+      apiVersion: networking.istio.io/v1beta1
+      kind: VirtualService
+      metadata:
+        name: beast-core-vs
+      spec:
+        hosts:
+        - beast-core.dev.il2.project-blue.gamewarden.io
+  - target:
+      kind: ConfigMap
+    patch: |-
+      apiVersion: v1
+      kind: ConfigMap
+      metadata:
+        name: cluster-prefix
+      data:
+        CLUSTER_PREFIX: il2-dev
+
+images:
+- name: beast-core
+  newName: registry.gamewarden.io/staging/beast-core-app
+  newTag: f964323d
+- name: data-loader
+  # newName: registry1.dso.mil/ironbank/bitnami/git
+  newName: registry.gamewarden.io/staging/beast-core-app/beast-code-init/ironbank-bitnami-git-lfs
+  newTag: "2.31.1"

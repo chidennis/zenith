@@ -1,0 +1,6 @@
+bases:
+  - ../../../base
+
+patchesStrategicMerge:
+  - patches/deployment-patch.yaml
+  - patches/git-configmap-patch.yaml
