@@ -1,0 +1,2 @@
+# beast-core-manifest
+
