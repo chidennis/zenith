@@ -12,6 +12,12 @@ spec:
   - match:
     - uri:
         prefix: /oauth
+    route:
+    - destination:
+        host: beast-core
+        port:
+          number: 80
+  - match:
     - uri:
         prefix: /
     route:
