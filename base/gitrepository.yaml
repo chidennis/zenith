@@ -4,7 +4,7 @@ metadata:
   name: beast-core-manifest
 spec:
   interval: 1m
-  url:  https://code.gamewarden.io/agencies/project-blue/beast-core-manifests.git
+  url:  https://code.gamewarden.io/agencies/project-blue/beast-core-manifest.git
   ref:
     branch: main
   secretRef:
