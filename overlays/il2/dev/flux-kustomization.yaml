@@ -12,3 +12,18 @@ spec:
   prune: true
   decryption:
     provider: sops
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: secrets
+  namespace: beast-core
+spec:
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: beast-core-manifest
+  path: ./overlays/il2/dev/secrets
+  prune: true
+  decryption:
+    provider: sops
