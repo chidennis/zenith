@@ -1,6 +1,6 @@
 resources:
   - ../../../base
-  - secrets
+  # - secrets
   - flux-kustomization.yaml
 
 patches:
