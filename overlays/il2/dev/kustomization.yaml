@@ -48,7 +48,7 @@ patches:
   # newName: registry1.dso.mil/ironbank/bitnami/git
 images:
 - name: beast-core
-  newName: registry.gamewarden.io/staging/beast-core-app
+  newName: registry-approved.gamewarden.io/beast-core-app
   newTag: f964323d
 - name: data-loader
   newName: registry.gamewarden.io/staging/beast-core-app/beast-code-init/ironbank-bitnami-git-lfs
