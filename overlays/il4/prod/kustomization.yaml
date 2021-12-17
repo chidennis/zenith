@@ -1,21 +1,23 @@
-bases:
-  - ../../base/
 
 images:
-  - name: beast-core
-    newName: registry1.dso.mil/ironbank/beast-code/beast-core/base-image
-    newTag: "3.10.0"
-  - name: data-loader
-    newName: registry.il4.dso.mil/platform-one/devops/pipeline-templates/beast-code-init/ironbank-bitnami-git-lfs
-    newTag: "2.31.1"
+- name: beast-core
+  newName: registry.gamewarden.io/staging/beast-core-app
+  newTag: f964323d
+- name: data-loader
+  newName: registry.il4.dso.mil/platform-one/devops/pipeline-templates/beast-code-init/ironbank-bitnami-git-lfs
+  newTag: 2.31.1
 
 patches:
-  - target:
-      kind: Kustomization
-    patch: |-
-      apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
-      kind: Kustomization
-      metadata:
-        name: beast-core
-      spec:
-        path: ./il2/overlays/prod
+- patch: |-
+    apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+    kind: Kustomization
+    metadata:
+      name: beast-core
+    spec:
+      path: ./il2/overlays/prod
+  target:
+    kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../base/
