@@ -6,10 +6,11 @@ spec:
   revisionHistoryLimit: 3
   replicas: 1
   strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 25%
-      maxSurge: 25%
+    type: Recreate
+    # type: RollingUpdate
+    # rollingUpdate:
+    #   maxUnavailable: 25%
+    #   maxSurge: 25%
   template:
     metadata:
       annotations:
