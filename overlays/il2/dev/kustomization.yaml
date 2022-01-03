@@ -12,8 +12,8 @@ patches:
       template:
         spec:
           imagePullSecrets:
-            - name: nexus-registry
             - name: private-registry
+            - name: approved-reg-pull-cred
   target:
     kind: Deployment
 - patch: |-
