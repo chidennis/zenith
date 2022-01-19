@@ -52,7 +52,7 @@ images:
   newName: registry-approved.gamewarden.io/beast-core-app
   newTag: f964323d
 - name: data-loader
-  newName: registry.gamewarden.io/staging/beast-core-app/beast-code-init/ironbank-bitnami-git-lfs
+  newName: registry.il2.gamewarden.io/staging/beast-core-app/beast-code-init/ironbank-bitnami-git-lfs
   newTag: 2.31.1
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
