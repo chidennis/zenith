@@ -23,7 +23,7 @@ patches:
     metadata:
       name: git-repo
     data:
-      GIT_REPO: code.gamewarden.io/agencies/project-blue/beast-core-application/beast-core-data.git
+      GIT_REPO: code.il2.gamewarden.io/agencies/project-blue/beast-core-application/beast-core-data.git
   target:
     kind: ConfigMap
 - patch: |-

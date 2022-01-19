@@ -6,7 +6,7 @@ commonLabels:
   authentication: istio-auth
 
 bases:
-  - https://code.gamewarden.io/common/app-common
+  - https://code.il2.gamewarden.io/common/app-common
 
 resources:
   - deployment.yaml
