@@ -4,8 +4,8 @@ resources:
 
 images:
 - name: beast-core
-  newName: registry-approved.il2.gamewarden.io/agencies/project-blue/beast-core-app
-  newTag: 3.10.0
+  newName: registry-approved.il2.gamewarden.io/beast-core-app
+  newTag: f964323d
 - name: data-loader
   newName: registry.il2.dso.mil/platform-one/products/beast-code/beast-code-manifests/aws
   newTag: "1.0"
