@@ -5,7 +5,8 @@ metadata:
   namespace: beast-core
 spec:
   gateways:
-  - istio-system/public
+  # updated for CNAP effort
+  - istio-system/private
   hosts:
   - beast-core.project-blue.gamewarden.io
   http:
