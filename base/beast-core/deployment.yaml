@@ -54,7 +54,7 @@ spec:
             - name: PORT
               value: "1337"
             - name: WORKSPACE_PATH
-              value: /platforms/modules
+              value: /platforms
             - name: BEASTCODE_BEASTCORE_ENABLEAUTH
               value: "false"
             - name: BEASTCODE_BEASTCORE_AUTH_JWT_VALIDATEISSUER
