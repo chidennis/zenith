@@ -6,7 +6,7 @@ metadata:
 spec:
   gateways:
   # updated for CNAP effort
-  - istio-system/private
+  - istio-system/public
   hosts:
   - beast-core.project-blue.gamewarden.io
   http:
