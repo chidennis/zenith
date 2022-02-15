@@ -29,7 +29,7 @@ spec:
                 name: git-data-creds
           env:
             - name: CLEAR_VOLUME
-              value: "true"
+              value: "false"
             - name: APP_NAME
               valueFrom:
                 configMapKeyRef:
