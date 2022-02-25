@@ -7,4 +7,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 1337
-      name: http
+      name: http-websocket
