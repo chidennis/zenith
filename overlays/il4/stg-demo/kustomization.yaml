@@ -32,6 +32,8 @@ patches:
     metadata:
       name: beast-core-vs
     spec:
+      gateways:
+      - istio-system/private
       hosts:
       - beast-core.stg.il4.project-blue.gamewarden.io
   target:
