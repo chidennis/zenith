@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
+
 if [ -z "$GIT_REPO" ]
 then
   echo "Missing 'GIT_REPO' variable."
@@ -29,7 +31,6 @@ then
     find "$VOLUME_PATH" -mindepth 1 -maxdepth 1 -type d -print0 | xargs -r0 rm -R
     rm -rf $VOLUME_PATH
     echo "Pulling data from '$GIT_REPO/' to '$VOLUME_PATH'.."
-    export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
     GIT_LFS_SKIP_SMUDGE=1 git clone "https://$USERNAME:$TOKEN@$GIT_REPO" "$VOLUME_PATH"
 fi
 
