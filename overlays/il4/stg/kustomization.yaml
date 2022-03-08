@@ -52,7 +52,7 @@ images:
   newName: registry-approved.il2.gamewarden.io/agencies/project-blue/beast-core-app
   newTag: 3.10.0
 - name: data-loader
-  newName: registry-unapproved.il2.gamewarden.io/agencies/project-blue/beast-code-data-int/ironbank-bitnami-git-lfs
-  newTag: 2.31.1
+  newName: registry-unapproved.il2.gamewarden.io/agencies/project-blue/git-lfs
+  newTag: b22b684a
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
