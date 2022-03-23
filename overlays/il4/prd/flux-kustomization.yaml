@@ -4,7 +4,7 @@ metadata:
   name: beast-core
   namespace: beast-core
 spec:
-  path: ./overlays/il4/stg-demo
+  path: ./overlays/il4/prd
   interval: 1m
   sourceRef:
     kind: GitRepository
@@ -23,7 +23,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: beast-core-manifest
-  path: ./overlays/il4/stg-demo/secrets
+  path: ./overlays/il4/prd/secrets
   prune: true
   decryption:
     provider: sops
