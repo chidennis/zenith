@@ -50,7 +50,7 @@ patches:
 images:
 - name: beast-core
   newName: registry-approved.il2.gamewarden.io/agencies/project-blue/beast-core-app
-  newTag: 3.10.0
+  newTag: 3.14.4
 - name: data-loader
   newName: registry1.dso.mil/ironbank/opensource/git-lfs/git-lfs
   newTag: 2.35.1-3.1.2
