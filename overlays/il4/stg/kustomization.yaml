@@ -2,6 +2,8 @@ resources:
 - ../../../base
 - flux-kustomization.yaml
 
+      # updated for CNAP
+      # updated for CNAP
 patches:
 - patch: |-
     apiVersion: apps/v1
