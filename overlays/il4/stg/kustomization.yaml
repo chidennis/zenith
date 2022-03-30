@@ -4,6 +4,8 @@ resources:
 
       # updated for CNAP
       # updated for CNAP
+      # updated for CNAP
+      # updated for CNAP
 patches:
 - patch: |-
     apiVersion: apps/v1
