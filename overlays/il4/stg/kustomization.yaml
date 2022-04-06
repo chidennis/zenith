@@ -54,6 +54,15 @@ patches:
       CLUSTER_PREFIX: il4-stg
   target:
     kind: ConfigMap
+- patch: |-
+    apiVersion: source.toolkit.fluxcd.io/v1beta1
+    kind: GitRepository
+    metadata:
+      name: credentials-copy
+    spec:
+      url: https://code.il2.gamewarden.io/common/external-mirrors/credentials-copy.git
+  target:
+    kind: GitRepository
 
   # newName: registry1.dso.mil/ironbank/bitnami/git
 images:
