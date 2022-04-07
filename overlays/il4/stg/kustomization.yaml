@@ -61,6 +61,8 @@ patches:
       name: credentials-copy
     spec:
       url: https://code.il2.gamewarden.io/common/external-mirrors/credentials-copy.git
+      secretRef:
+        name: gitlab-creds
   target:
     kind: GitRepository
 
