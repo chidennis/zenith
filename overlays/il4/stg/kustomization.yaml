@@ -65,6 +65,7 @@ patches:
         name: gitlab-creds
   target:
     kind: GitRepository
+    name: credentials-copy
 
   # newName: registry1.dso.mil/ironbank/bitnami/git
 images:
