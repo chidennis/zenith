@@ -32,6 +32,9 @@ patches:
     metadata:
       name: beast-core-vs
     spec:
+      gateways:
+      # updated for CNAP
+      - istio-system/private
       hosts:
       - beast-core.il4.project-blue.gamewarden.io
   target:
