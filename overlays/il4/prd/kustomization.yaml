@@ -33,7 +33,7 @@ patches:
       name: beast-core-vs
     spec:
       hosts:
-      - beast-core.prd.il4.project-blue.gamewarden.io
+      - beast-core.il4.project-blue.gamewarden.io
   target:
     kind: VirtualService
 - patch: |-
