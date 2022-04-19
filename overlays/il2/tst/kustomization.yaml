@@ -46,6 +46,12 @@ patches:
   target:
     kind: ConfigMap
 
+configMapGenerator:
+- name: beast-core-config
+  behavior: merge
+  literals:
+    - COMMIT=test
+
   # newName: registry1.dso.mil/ironbank/bitnami/git
 images:
 - name: beast-core
