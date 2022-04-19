@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: git-repo
-data:
-  GIT_REPO: code.il4.dso.mil/platform-one/products/beast-code/beast-core-data.git
