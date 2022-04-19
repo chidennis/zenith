@@ -20,7 +20,7 @@ configMapGenerator:
   behavior: create
   literals:
     - VAR=value
-    - DATE=2022Apr19
+    - DATE=2022Apr20
 - name: data-loader
   files:
   - files/data-loader.sh
