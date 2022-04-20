@@ -69,7 +69,12 @@ patches:
     kind: GitRepository
     name: credentials-copy
 
-  # newName: registry1.dso.mil/ironbank/bitnami/git
+configMapGenerator:
+- name: beast-core-config
+  behavior: merge
+  literals:
+    - COMMIT=a16f42be
+
 images:
 - name: beast-core
   newName: registry-approved.il2.gamewarden.io/agencies/project-blue/beast-core-app
