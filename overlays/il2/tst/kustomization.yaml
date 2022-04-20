@@ -50,7 +50,7 @@ configMapGenerator:
 - name: beast-core-config
   behavior: merge
   literals:
-    - COMMIT=66a9b670
+    - COMMIT=a16f42be
 
   # newName: registry1.dso.mil/ironbank/bitnami/git
 images:
